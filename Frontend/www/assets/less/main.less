@@ -1,3 +1,96 @@
-@mainColor: blue;
+@mainColor: #ec890e;
 
 @import "pizza/pizza-card";
+
+h2{
+ text-align: center;
+}
+.types-of-pizza, .discount-text, .discount-title{
+    text-align: center;   
+}
+
+
+
+.badge{
+    background-color: @mainColor;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    min-width: 594px;  
+    background-color: black;
+}
+
+
+.discount-panel {
+    position: fixed;
+    bottom: 0;
+    left:10px;
+    background: #ea862e;
+    width: 90px;
+    padding: 10px;
+    color: #fff;
+}
+.discount-before {
+    width:90px;
+    height: 11px;
+    top: -11px;
+    left: -0px;
+    background-image: url(../images/discount.svg);
+    background-size: 100px 11px;
+    background-repeat: no-repeat;
+    padding: 0!important;
+    margin: 0!important;
+    position: absolute;
+}
+.discount-title {
+    text-transform: uppercase;
+    font-family: Helvetica,Calibri;
+    font-weight: 700;
+    font-size: 15px;
+    border-bottom: 2px dotted #d16301;
+    margin-bottom: 7px;
+    padding-bottom: 3px;
+}
+
+.discount-text {
+    font-size: 15px;
+    font-weight: 700;
+}
+.left-panel{
+    height:520px;
+    width: 100%;
+    padding-right: 360px;
+    background-color:antiquewhite;
+    
+    ul.nav-pills li a{
+        border-radius:10px;
+        padding:10px;
+        
+    }
+    ul.nav-pills .not-active a:hover{
+        background-color:lighten(@mainColor,	40%);
+    }
+    
+    ul.nav-pills .active a{
+        background-color: @mainColor;
+    }
+    .filter-block{
+    display: inline-block;
+}
+    
+}
+ 
+
+.right-panel{
+     float: left;
+    position: fixed;
+    right: 0;
+    top:0;
+    bottom: 0;
+    width:330px;
+    min-width: 330px;
+    height:70%;
+    background-color:aqua;
+}
