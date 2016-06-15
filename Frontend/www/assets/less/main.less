@@ -1,25 +1,51 @@
-@mainColor: #ec890e;
+@mainColor: #EA862E;
+@backgroundColor: #FFFFF5;
+@headerColor: #000;
+@buttonTextColor: #fff;
+@panel-background-color: #F8F9FB;
+
+@headerOpacity: 0.75;
+
+@panel-width: 224px;
+@header-height: 70px;
+@sticker-width: 75px;
 
 @import "pizza/pizza-card";
+@import "pizza/left-panel";
+@import "pizza/right-panel";
 
-h2{
- text-align: center;
-}
-.types-of-pizza, .discount-text, .discount-title{
-    text-align: center;   
-}
-
-
-
-.badge{
-    background-color: @mainColor;
-}
 
 body{
-    height: 100%;
-    width: 100%;
-    min-width: 594px;  
-    background-color: black;
+  background: @backgroundColor;
+}
+h3{
+  color: @mainColor;
+}
+.badge{
+  background-color: @mainColor;
+}
+
+.btn-success, .btn-default.navbar-btn{
+    color: #fff;
+    background-color: @mainColor;
+    border-color: @mainColor;
+}
+
+.btn-success:hover{
+    color: #fff;
+    background-color: lighten(@mainColor,5%);
+    border-color: lighten(@mainColor,5%);
+}
+.btn-success:active{
+    color: #fff;
+    background-color: lighten(@mainColor,5%);
+    border-color: lighten(@mainColor,5%);
+}
+
+.btn-default.navbar-btn :hover{
+    color: #fff;
+    background-color: lighten(@headerColor,5%);
+    border-color: lighten(@headerColor,5%);
 }
 
 
@@ -58,39 +84,78 @@ body{
     font-size: 15px;
     font-weight: 700;
 }
-.left-panel{
-    height:520px;
-    width: 100%;
-    padding-right: 360px;
-    background-color:antiquewhite;
-    
-    ul.nav-pills li a{
-        border-radius:10px;
-        padding:10px;
-        
-    }
-    ul.nav-pills .not-active a:hover{
-        background-color:lighten(@mainColor,	40%);
-    }
-    
-    ul.nav-pills .active a{
-        background-color: @mainColor;
-    }
-    .filter-block{
-    display: inline-block;
-}
-    
-}
- 
 
-.right-panel{
-     float: left;
-    position: fixed;
-    right: 0;
-    top:0;
-    bottom: 0;
-    width:330px;
-    min-width: 330px;
-    height:70%;
-    background-color:aqua;
+.pizza-booked{
+
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 1px solid lighten(#000, 85%);
+  overflow: hidden;
+
+  .radius{
+    margin-right: 10px;
+  }
+
+  .buttons{
+
+    .glyphicon{
+
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 50%;
+      color: white;
+
+      -webkit-transition: background-color .1s ease;
+      -moz-transition: background-color .1s ease;
+      -o-transition: background-color .1s ease;
+      transition: background-color .1s ease;
+
+      &.glyphicon-plus{
+        background-color: #5CB85C;
+      }
+      &.glyphicon-plus:hover{
+        background-color: #449D44;
+      }
+
+      &.glyphicon-minus{
+        margin-left: 20px;
+        background-color: #D9534F;
+      }
+      &.glyphicon-minus:hover{
+        background-color: #C9302C;
+      }
+
+      &.glyphicon-remove{
+        margin-left: 20px;
+        background-color: #F0AD4E;
+      }
+      &.glyphicon-remove:hover{
+        background-color: #EC971F;
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      font-size: 12px;
+    }
+  }
+
+  .image{
+    img{
+      max-height: 88px;
+      position: absolute;
+      right: -30px;
+      top:20px;
+    }
+
+    @media screen and (max-width: 1024px) {
+      img{
+        max-height: 88px;
+        position: absolute;
+        right: -40px;
+      }
+    }
+  }
 }
+
+  
+
